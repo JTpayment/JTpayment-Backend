@@ -1,0 +1,21 @@
+server:
+  port: ${SERVER_PORT}
+spring:
+
+  datasource:
+    driver-class-name: ${DB_CLASS}
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    show_sql: true
+
+#jwt:
+#  accessSecret: ${ACCESS_SECRET}
+#  refreshSecret: ${REFRESH_SECRET}
+#  accessTime: 100000
+#  refreshTime: 1209600
