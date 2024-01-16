@@ -14,8 +14,9 @@ spring:
       ddl-auto: create
     show_sql: true
 
-#jwt:
-#  accessSecret: ${ACCESS_SECRET}
-#  refreshSecret: ${REFRESH_SECRET}
-#  accessTime: 100000
-#  refreshTime: 1209600
+jwt:
+  accessSecret: ${ACCESS_SECRET}
+  refreshSecret: ${REFRESH_SECRET}
+  accessTime: 100000
+  refreshTime: 1209600
+
