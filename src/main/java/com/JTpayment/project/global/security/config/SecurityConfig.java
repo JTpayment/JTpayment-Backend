@@ -43,6 +43,8 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                 .requestMatchers(HttpMethod.POST, "/mail").permitAll()
                 .requestMatchers(HttpMethod.POST, "/mail/check").permitAll()
+                .requestMatchers(HttpMethod.GET,"/").permitAll()
+                .requestMatchers(HttpMethod.POST, "/request/**").authenticated()
                 .anyRequest().authenticated();
 
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
