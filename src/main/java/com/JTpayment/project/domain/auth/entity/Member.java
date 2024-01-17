@@ -1,5 +1,6 @@
 package com.JTpayment.project.domain.auth.entity;
 
+import com.JTpayment.project.domain.auth.entity.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,4 +28,8 @@ public class Member {
 
     @Column(name = "member_nickname", nullable = false,unique = true)
     private String nickName;
+
+    @Column(name = "role")
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }
