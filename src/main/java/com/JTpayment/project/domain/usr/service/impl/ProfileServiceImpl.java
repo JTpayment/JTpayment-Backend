@@ -18,10 +18,9 @@ public class ProfileServiceImpl implements ProfileService {
         Member member = memberRepository.findMemberByLoginId(loginId)
                 .orElseThrow(MemberNotfoundException::new);
 
-        ProfileReq profileReq = new ProfileReq();
-        profileReq.setNickname(member.getNickName());
-        profileReq.setEmail(member.getEmail());
-
-        return profileReq;
+        return ProfileReq.builder()
+                .nickname(member.getNickName())
+                .email(member.getEmail())
+                .build();
     }
 }
