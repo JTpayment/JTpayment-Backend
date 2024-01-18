@@ -49,8 +49,10 @@ public class SecurityConfig {
                 .requestMatchers("/request/detail").hasAuthority("ADMIN")
                 .requestMatchers("/create").hasAuthority("ADMIN")
                 .requestMatchers(HttpMethod.PATCH, "/admin/**").hasAuthority("ADMIN")
+                .requestMatchers(HttpMethod.GET, "/user/profile/**").authenticated()
+                .requestMatchers(HttpMethod.GET, "/user/mypage").authenticated()
                 .requestMatchers("/certification/**").authenticated()
-                .anyRequest().permitAll();
+                .anyRequest().denyAll();
 
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
