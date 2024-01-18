@@ -1,7 +1,9 @@
 package com.JTpayment.project.domain.certification.presentation;
 
 import com.JTpayment.project.domain.certification.presentation.dto.request.ApplyRequest;
+import com.JTpayment.project.domain.certification.presentation.dto.response.ApplyListResponse;
 import com.JTpayment.project.domain.certification.presentation.dto.response.CertificationListResponse;
+import com.JTpayment.project.domain.certification.service.ApplyListService;
 import com.JTpayment.project.domain.certification.service.ApplyRequestService;
 import com.JTpayment.project.domain.certification.service.CertificationListService;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +20,8 @@ public class CertificationController {
 
     private final ApplyRequestService applyRequestService;
 
+    private final ApplyListService applyListService;
+
     @GetMapping
     public ResponseEntity<CertificationListResponse> list() {
         CertificationListResponse certificationListResponse = certificationListService.execute();
@@ -28,5 +32,11 @@ public class CertificationController {
     public ResponseEntity<Void> request(@RequestBody ApplyRequest applyRequest) {
         applyRequestService.execute(applyRequest);
         return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @GetMapping("/request/list")
+    public ResponseEntity<ApplyListResponse> applyList() {
+        ApplyListResponse applyListResponse = applyListService.execute();
+        return new ResponseEntity<>(applyListResponse, HttpStatus.OK);
     }
 }
