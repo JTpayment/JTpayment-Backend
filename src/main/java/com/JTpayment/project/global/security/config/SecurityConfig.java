@@ -45,6 +45,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/mail/check").permitAll()
                 .requestMatchers(HttpMethod.GET,"/").permitAll()
                 .requestMatchers(HttpMethod.POST, "/request/**").authenticated()
+                .requestMatchers("/request/list").hasAuthority("ADMIN")
                 .requestMatchers(HttpMethod.PATCH, "/admin/**").hasAuthority("ADMIN")
                 .anyRequest().permitAll();
 
