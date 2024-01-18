@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/certification/{certification_id}")
+@RequestMapping("/certification/{certificationId}")
 public class BoardController {
 
     private final BoardCreateService boardCreateService;
 
     @PostMapping
-    public ResponseEntity<Void> create(@PathVariable Long certification_id, @RequestBody BoardCreateRequest boardCreateRequest) {
-        boardCreateService.execute(certification_id, boardCreateRequest);
+    public ResponseEntity<Void> create(@PathVariable Long certificationId, @RequestBody BoardCreateRequest boardCreateRequest) {
+        boardCreateService.execute(certificationId, boardCreateRequest);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }
