@@ -49,6 +49,7 @@ public class SecurityConfig {
                 .requestMatchers("/request/detail").hasAuthority("ADMIN")
                 .requestMatchers("/create").hasAuthority("ADMIN")
                 .requestMatchers(HttpMethod.PATCH, "/admin/**").hasAuthority("ADMIN")
+                .requestMatchers("/certification/**").authenticated()
                 .anyRequest().permitAll();
 
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
