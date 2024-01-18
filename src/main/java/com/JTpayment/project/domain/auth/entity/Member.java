@@ -31,7 +31,7 @@ public class Member {
     private String nickName;
 
     @Enumerated(EnumType.STRING)
-    private Status status = Status.ACTIVE;
+    private Status status;
 
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
