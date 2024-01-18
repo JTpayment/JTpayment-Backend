@@ -16,6 +16,7 @@ public enum ErrorCode {
 
     //CERTIFICATION
     APPLY_NOT_FOUND("요청글을 찾을 수 없습니다.", 404),
+    CERTIFICATION_NOT_FOUND("게시판을 찾을 수 없습니다.", 404),
 
     //MEMBER
     DUPLICATED_ID("중복된 아이디 입니다.", 409),
