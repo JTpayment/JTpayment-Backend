@@ -6,7 +6,6 @@ import com.JTpayment.project.domain.authority.service.MemberActiveService;
 import com.JTpayment.project.domain.authority.service.MemberInactiveService;
 import com.JTpayment.project.domain.authority.service.RevokeAdminRoleService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/admin")
 @RequiredArgsConstructor
-@Slf4j
 public class AuthorityController {
     private final GrantAdminRoleService grantAdminRoleService;
     private final RevokeAdminRoleService revokeAdminRoleService;
@@ -23,7 +21,6 @@ public class AuthorityController {
 
     @PatchMapping("/role/grant")
     public ResponseEntity<Void> grantAdminRole(@RequestBody AuthEmailReq req) {
-        log.info("email: {}", req.getEmail());
         grantAdminRoleService.execute(req.getEmail());
         return new ResponseEntity<>(HttpStatus.OK);
     }
