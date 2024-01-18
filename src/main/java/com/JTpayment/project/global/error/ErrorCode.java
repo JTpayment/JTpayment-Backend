@@ -14,6 +14,9 @@ public enum ErrorCode {
     TOKEN_IS_EXPIRED("토큰이 만료 되었습니다.", 403),
     TOKEN_IS_INVALID("토큰이 유효 하지 않습니다.", 401),
 
+    //CERTIFICATION
+    APPLY_NOT_FOUND("요청글을 찾을 수 없습니다.", 404),
+
     //MEMBER
     DUPLICATED_ID("중복된 아이디 입니다.", 409),
     DUPLICATED_NICKNAME("중복된 닉네임 입니다.", 409),

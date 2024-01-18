@@ -46,6 +46,8 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET,"/").permitAll()
                 .requestMatchers(HttpMethod.POST, "/request/**").authenticated()
                 .requestMatchers("/request/list").hasAuthority("ADMIN")
+                .requestMatchers("/request/detail").hasAuthority("ADMIN")
+                .requestMatchers("/create").hasAuthority("ADMIN")
                 .requestMatchers(HttpMethod.PATCH, "/admin/**").hasAuthority("ADMIN")
                 .anyRequest().permitAll();
 
