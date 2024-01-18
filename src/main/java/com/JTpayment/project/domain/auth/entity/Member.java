@@ -1,6 +1,7 @@
 package com.JTpayment.project.domain.auth.entity;
 
 import com.JTpayment.project.domain.auth.entity.enums.Role;
+import com.JTpayment.project.domain.auth.entity.enums.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,7 +30,18 @@ public class Member {
     @Column(name = "member_nickname", nullable = false,unique = true)
     private String nickName;
 
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }

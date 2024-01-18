@@ -18,4 +18,9 @@ public class MemberUtil {
         return memberRepository.findMemberByLoginId(id)
                 .orElseThrow(MemberNotfoundException::new);
     }
+
+    public Member findMemberByEmail(String email) {
+        return memberRepository.findMemberByEmail(email)
+                .orElseThrow(MemberNotfoundException::new);
+    }
 }
