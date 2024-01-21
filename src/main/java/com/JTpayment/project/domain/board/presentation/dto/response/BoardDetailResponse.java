@@ -1,5 +1,6 @@
 package com.JTpayment.project.domain.board.presentation.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,6 +21,7 @@ public class BoardDetailResponse {
 
     private String author;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate createDate;
 
     private List<CommentResponse> commentList;
