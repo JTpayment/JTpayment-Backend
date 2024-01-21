@@ -18,6 +18,10 @@ public enum ErrorCode {
     APPLY_NOT_FOUND("요청글을 찾을 수 없습니다.", 404),
     CERTIFICATION_NOT_FOUND("게시판을 찾을 수 없습니다.", 404),
 
+    //BOARD
+    BOARD_NOT_FOUND("게시물을 찾을 수 없습니다.", 404),
+    MISMATCH_CERTIFICATION("게시판이 일치하지 않습니다.", 403),
+
     //MEMBER
     DUPLICATED_ID("중복된 아이디 입니다.", 409),
     DUPLICATED_NICKNAME("중복된 닉네임 입니다.", 409),
