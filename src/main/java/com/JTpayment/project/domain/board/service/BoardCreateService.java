@@ -4,5 +4,5 @@ import com.JTpayment.project.domain.board.presentation.dto.request.BoardCreateRe
 
 public interface BoardCreateService {
 
-    void execute(Long certificationId, BoardCreateRequest boardCreateRequest);
+    void execute(Long cerId, BoardCreateRequest boardCreateRequest);
 }

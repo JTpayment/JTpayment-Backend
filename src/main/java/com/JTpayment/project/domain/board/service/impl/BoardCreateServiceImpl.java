@@ -26,11 +26,11 @@ public class BoardCreateServiceImpl implements BoardCreateService {
     private final CertificationUtil certificationUtil;
 
     @Override
-    public void execute(Long certificationId, BoardCreateRequest boardCreateRequest) {
+    public void execute(Long cerId, BoardCreateRequest boardCreateRequest) {
 
         Member member = memberUtil.currentMember();
 
-        Certification certification = certificationUtil.findById(certificationId);
+        Certification certification = certificationUtil.findById(cerId);
 
         Board board = Board.builder()
                 .title(boardCreateRequest.getTitle())
