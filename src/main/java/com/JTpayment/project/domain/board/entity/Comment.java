@@ -1,5 +1,6 @@
 package com.JTpayment.project.domain.board.entity;
 
+import com.JTpayment.project.domain.auth.entity.Member;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,8 +21,9 @@ public class Comment {
     @Column(nullable = false)
     private String comment;
 
-    @Column(nullable = false)
-    private String author;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "member_id")
+    private Member author;
 
     @Column(nullable = false)
     private LocalDate createDate;
