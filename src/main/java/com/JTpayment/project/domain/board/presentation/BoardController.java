@@ -1,11 +1,11 @@
 package com.JTpayment.project.domain.board.presentation;
 
 import com.JTpayment.project.domain.board.presentation.dto.request.BoardCreateRequest;
+import com.JTpayment.project.domain.board.presentation.dto.request.BoardUpdateRequest;
+import com.JTpayment.project.domain.board.presentation.dto.request.CommentRequest;
 import com.JTpayment.project.domain.board.presentation.dto.response.BoardDetailResponse;
 import com.JTpayment.project.domain.board.presentation.dto.response.BoardListResponse;
-import com.JTpayment.project.domain.board.service.BoardCreateService;
-import com.JTpayment.project.domain.board.service.BoardDetailService;
-import com.JTpayment.project.domain.board.service.BoardListService;
+import com.JTpayment.project.domain.board.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +21,12 @@ public class BoardController {
     private final BoardListService boardListService;
 
     private final BoardDetailService boardDetailService;
+
+    private final BoardUpdateService boardUpdateService;
+
+    private final BoardDeleteService boardDeleteService;
+
+    private final CommentService commentService;
 
     @PostMapping
     public ResponseEntity<Void> create(@PathVariable Long cerId, @RequestBody BoardCreateRequest boardCreateRequest) {
@@ -38,5 +44,23 @@ public class BoardController {
     public ResponseEntity<BoardDetailResponse> detail(@PathVariable Long cerId, @PathVariable Long boardId) {
         BoardDetailResponse boardDetailResponse = boardDetailService.execute(cerId, boardId);
         return new ResponseEntity<>(boardDetailResponse, HttpStatus.OK);
+    }
+
+    @PatchMapping("/{boardId}")
+    public ResponseEntity<Void> update(@PathVariable Long boardId, @RequestBody BoardUpdateRequest boardUpdateRequest) {
+        boardUpdateService.execute(boardId, boardUpdateRequest);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{boardId}")
+    public ResponseEntity<Void> delete(@PathVariable Long boardId) {
+        boardDeleteService.execute(boardId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PostMapping("/{boardId}/comment")
+    public ResponseEntity<Void> comment(@PathVariable Long boardId, @RequestBody CommentRequest commentRequest) {
+        commentService.execute(boardId, commentRequest);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }
