@@ -1,4 +1,4 @@
-package com.JTpayment.project.domain.usr.presentation.dto.response;
+package com.JTpayment.project.domain.user.presentation.dto.response;
 
 import com.JTpayment.project.domain.board.entity.Board;
 import lombok.*;

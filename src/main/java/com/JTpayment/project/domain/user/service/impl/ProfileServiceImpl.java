@@ -1,10 +1,10 @@
-package com.JTpayment.project.domain.usr.service.impl;
+package com.JTpayment.project.domain.user.service.impl;
 
 import com.JTpayment.project.domain.auth.entity.Member;
 import com.JTpayment.project.domain.auth.exception.MemberNotfoundException;
 import com.JTpayment.project.domain.auth.repository.MemberRepository;
-import com.JTpayment.project.domain.usr.presentation.dto.request.ProfileReq;
-import com.JTpayment.project.domain.usr.service.ProfileService;
+import com.JTpayment.project.domain.user.presentation.dto.request.ProfileReq;
+import com.JTpayment.project.domain.user.service.ProfileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

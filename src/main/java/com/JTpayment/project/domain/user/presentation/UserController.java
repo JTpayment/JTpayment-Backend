@@ -1,9 +1,9 @@
-package com.JTpayment.project.domain.usr.presentation;
+package com.JTpayment.project.domain.user.presentation;
 
-import com.JTpayment.project.domain.usr.presentation.dto.request.ProfileReq;
-import com.JTpayment.project.domain.usr.presentation.dto.response.ListBoardRes;
-import com.JTpayment.project.domain.usr.service.MypageService;
-import com.JTpayment.project.domain.usr.service.ProfileService;
+import com.JTpayment.project.domain.user.presentation.dto.request.ProfileReq;
+import com.JTpayment.project.domain.user.presentation.dto.response.ListBoardRes;
+import com.JTpayment.project.domain.user.service.MypageService;
+import com.JTpayment.project.domain.user.service.ProfileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,11 +1,11 @@
-package com.JTpayment.project.domain.usr.service.impl;
+package com.JTpayment.project.domain.user.service.impl;
 
 import com.JTpayment.project.domain.auth.entity.Member;
 import com.JTpayment.project.domain.board.entity.Board;
 import com.JTpayment.project.domain.board.repository.BoardRepository;
-import com.JTpayment.project.domain.usr.presentation.dto.response.BoardRes;
-import com.JTpayment.project.domain.usr.presentation.dto.response.ListBoardRes;
-import com.JTpayment.project.domain.usr.service.MypageService;
+import com.JTpayment.project.domain.user.presentation.dto.response.BoardRes;
+import com.JTpayment.project.domain.user.presentation.dto.response.ListBoardRes;
+import com.JTpayment.project.domain.user.service.MypageService;
 import com.JTpayment.project.global.util.MemberUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

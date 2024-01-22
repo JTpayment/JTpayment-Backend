@@ -1,4 +1,4 @@
-package com.JTpayment.project.domain.usr.presentation.dto.request;
+package com.JTpayment.project.domain.user.presentation.dto.request;
 
 import lombok.*;
 
