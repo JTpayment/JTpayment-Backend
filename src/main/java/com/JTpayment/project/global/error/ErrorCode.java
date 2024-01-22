@@ -21,6 +21,7 @@ public enum ErrorCode {
     //BOARD
     BOARD_NOT_FOUND("게시물을 찾을 수 없습니다.", 404),
     MISMATCH_CERTIFICATION("게시판이 일치하지 않습니다.", 403),
+    MISMATCH_AUTHOR("작성자가 아닙니다.", 403),
 
     //MEMBER
     DUPLICATED_ID("중복된 아이디 입니다.", 409),

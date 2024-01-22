@@ -26,7 +26,7 @@ public class Board {
     @Column(nullable = false)
     private String content;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member author;
 
@@ -39,4 +39,9 @@ public class Board {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "certification_id")
     private Certification certification;
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
 }
