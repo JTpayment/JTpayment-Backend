@@ -51,6 +51,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.PATCH, "/admin/**").hasAuthority("ADMIN")
                 .requestMatchers(HttpMethod.GET, "/user/**").authenticated()
                 .requestMatchers("/certification/**").authenticated()
+                .requestMatchers("/report/**").authenticated()
                 .anyRequest().denyAll();
 
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);

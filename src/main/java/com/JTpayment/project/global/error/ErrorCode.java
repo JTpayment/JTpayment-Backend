@@ -28,7 +28,8 @@ public enum ErrorCode {
     DUPLICATED_NICKNAME("중복된 닉네임 입니다.", 409),
     DUPLICATED_EMAIL("중복된 이메일 입니다.", 409),
     MEMBER_NOT_FOUND("등록되지 않은 유저입니다.", 404),
-    PASSWORD_INVALID("비밀번호가 일치하지 않습니다.", 403);
+    PASSWORD_INVALID("비밀번호가 일치하지 않습니다.", 403),
+    YOU_NOT_ADMIN("어드민 권한이 없습니다.", 403);
 
 
     private final String message;
