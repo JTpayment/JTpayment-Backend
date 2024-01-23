@@ -23,6 +23,9 @@ public enum ErrorCode {
     MISMATCH_CERTIFICATION("게시판이 일치하지 않습니다.", 403),
     MISMATCH_AUTHOR("작성자가 아닙니다.", 403),
 
+    //REPORT
+    REPORT_NOT_FOUND("신고글을 찾을 수 없습니다.", 404),
+
     //MEMBER
     DUPLICATED_ID("중복된 아이디 입니다.", 409),
     DUPLICATED_NICKNAME("중복된 닉네임 입니다.", 409),
