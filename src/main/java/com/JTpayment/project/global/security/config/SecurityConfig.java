@@ -53,7 +53,7 @@ public class SecurityConfig {
                 .requestMatchers("/certification/**").authenticated()
                 .requestMatchers("/report/**").authenticated()
                 .requestMatchers("/order").authenticated()
-                .requestMatchers("/payment/**").authenticated()
+                .requestMatchers("/payment/**").permitAll()
                 .anyRequest().denyAll();
 
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
