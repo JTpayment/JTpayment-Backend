@@ -32,8 +32,10 @@ public enum ErrorCode {
     DUPLICATED_EMAIL("중복된 이메일 입니다.", 409),
     MEMBER_NOT_FOUND("등록되지 않은 유저입니다.", 404),
     PASSWORD_INVALID("비밀번호가 일치하지 않습니다.", 403),
-    YOU_NOT_ADMIN("어드민 권한이 없습니다.", 403);
+    YOU_NOT_ADMIN("어드민 권한이 없습니다.", 403),
 
+    //ORDER
+    ORDER_NOT_FOUND("주문을 찾을 수 없습니다.", 404);
 
     private final String message;
     private final int status;
