@@ -29,3 +29,7 @@ email:
   port: ${MAIL_PORT}
   username: ${MAIL_USERNAME}
   password: ${MAIL_PASSWORD}
+
+payment:
+  api: ${PAYMENT_API}
+  secret: ${PAYMENT_SECRET}
