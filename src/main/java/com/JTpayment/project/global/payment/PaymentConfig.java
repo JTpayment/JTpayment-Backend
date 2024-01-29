@@ -1,4 +1,4 @@
-package com.JTpayment.project.global.security.config;
+package com.JTpayment.project.global.payment;
 
 import com.siot.IamportRestClient.IamportClient;
 import org.springframework.beans.factory.annotation.Value;
