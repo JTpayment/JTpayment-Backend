@@ -37,11 +37,18 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @Column(name = "credit")
+    private Long credit;
+
     public void setRole(Role role) {
         this.role = role;
     }
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public void setCredit(Long credit) {
+        this.credit = credit;
     }
 }
