@@ -1,5 +1,6 @@
 package com.JTpayment.project.domain.payment.service.impl;
 
+import com.JTpayment.project.domain.auth.service.MemberCreditService;
 import com.JTpayment.project.domain.payment.entity.Order;
 import com.JTpayment.project.domain.payment.entity.enums.PaymentStatus;
 import com.JTpayment.project.domain.payment.presentation.dto.request.PaymentCallbackReq;
@@ -26,6 +27,7 @@ public class PaymentCallbackServiceImpl implements PaymentCallbackService {
     private final OrderRepository orderRepository;
     private final PaymentRepository paymentRepository;
     private final IamportClient iamportClient;
+    private final MemberCreditService memberCreditService;
 
     @Override
     public IamportResponse<Payment> execute(PaymentCallbackReq req) {
@@ -54,6 +56,7 @@ public class PaymentCallbackServiceImpl implements PaymentCallbackService {
             }
 
             order.getPayment().changePaymentBySuccess(PaymentStatus.OK, res.getResponse().getImpUid());
+            memberCreditService.execute(order.getMember().getMemberId(), order.getPayment().getPrice());
 
             return res;
         }catch (IamportResponseException e){
