@@ -21,6 +21,7 @@ public class MemberMapper {
                 .email(signupReq.getEmail())
                 .status(Status.ACTIVE)
                 .role(Role.USER)
+                .credit(0L)
                 .build();
     }
 }
