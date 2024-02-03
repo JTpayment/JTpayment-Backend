@@ -35,7 +35,11 @@ public enum ErrorCode {
     YOU_NOT_ADMIN("어드민 권한이 없습니다.", 403),
 
     //ORDER
-    ORDER_NOT_FOUND("주문을 찾을 수 없습니다.", 404);
+    ORDER_NOT_FOUND("주문을 찾을 수 없습니다.", 404),
+
+    //ROOM
+    YOU_NOT_PARTICIPATE_IN("참여하지 않은 방 입니다.", 403),
+    ROOM_NOT_FOUND("채팅방을 찾을 수 없습니다.", 404);
 
     private final String message;
     private final int status;
