@@ -54,6 +54,10 @@ public class SecurityConfig {
                 .requestMatchers("/report/**").authenticated()
                 .requestMatchers("/order").authenticated()
                 .requestMatchers("/payment/**").permitAll()
+                .requestMatchers("/ws/**").permitAll()
+                .requestMatchers("/pub/**").permitAll()
+                .requestMatchers("/sub/**").permitAll()
+                .requestMatchers("/chat/**").authenticated()
                 .anyRequest().denyAll();
 
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
